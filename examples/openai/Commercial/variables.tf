@@ -76,7 +76,7 @@ variable "openai_deployments" {
         version = "0301"
       }
       scale = {
-        type     = "Standard"        
+        type = "Standard"
       }
       rai_policy_name = ""
     }

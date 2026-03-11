@@ -29,7 +29,7 @@ resource "azurerm_cognitive_account" "openai" {
       default_action = acl.value.default_action
       ip_rules       = acl.value.ip_rules
       virtual_network_rules {
-        subnet_id = acl.value.subnet_id
+        subnet_id                            = acl.value.subnet_id
         ignore_missing_vnet_service_endpoint = acl.value.ignore_missing_vnet_service_endpoint
       }
     }

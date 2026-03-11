@@ -4,7 +4,7 @@ module "cognitive_account_openai" {
 
   //version = "~> 1.0.0"
 
-  depends_on = [ azurerm_resource_group.openai_rg ]
+  depends_on = [azurerm_resource_group.openai_rg]
 
   //Global Settings
   # Resource Group, location, VNet and Subnet details
