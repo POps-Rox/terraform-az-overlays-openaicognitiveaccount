@@ -40,7 +40,7 @@ provider "azurerm" {
 }
 
 module "cognitive_account_openai" {
-  source = "azurenoops/overlays-openai-cognitive-account/azurerm"
+  source = "POps-Rox/tf-az-overlays-openai-cognitive-account/azurerm"
   version = "~> x.x.x"
 
   depends_on = [ azurerm_resource_group.openai_rg ]
