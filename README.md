@@ -105,16 +105,16 @@ variable "openai_deployments" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9 |
 | <a name="requirement_azurenoopsutils"></a> [azurenoopsutils](#requirement\_azurenoopsutils) | ~> 1.0.4 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.36 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.116 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_azurenoopsutils"></a> [azurenoopsutils](#provider\_azurenoopsutils) | ~> 1.0.4 |
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 3.36 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 3.116 |
 
 ## Modules
 
