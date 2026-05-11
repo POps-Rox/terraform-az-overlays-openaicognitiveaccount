@@ -9,6 +9,7 @@ resource "azurerm_cognitive_deployment" "deployment" {
 
   name                 = each.key
   cognitive_account_id = azurerm_cognitive_account.openai.id
+  rai_policy_name      = each.value.rai_policy_name == "" ? null : each.value.rai_policy_name
 
   model {
     format  = "OpenAI"
@@ -16,11 +17,11 @@ resource "azurerm_cognitive_deployment" "deployment" {
     version = each.value.model.version
   }
 
-  scale {
-    type     = each.value.scale.type
-    tier     = each.value.scale.tier
-    size     = each.value.scale.size
-    family   = each.value.scale.family
-    capacity = each.value.scale.capacity
+  sku {
+    name     = try(each.value.scale.type, "Standard")
+    tier     = try(each.value.scale.tier, null)
+    size     = try(each.value.scale.size, null)
+    family   = try(each.value.scale.family, null)
+    capacity = try(each.value.scale.capacity, null)
   }
 }
