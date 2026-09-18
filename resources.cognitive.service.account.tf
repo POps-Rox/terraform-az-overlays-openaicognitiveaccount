@@ -17,7 +17,7 @@ resource "azurerm_cognitive_account" "openai" {
     for_each = var.identity_type == null ? [] : ["enabled"]
     content {
       type         = var.identity_type
-      identity_ids = var.identity_ids == "UserAssigned" ? var.identity_ids : null
+      identity_ids = contains(split(",", replace(var.identity_type, " ", "")), "UserAssigned") ? var.identity_ids : null
     }
   }
 
