@@ -36,8 +36,10 @@ resource "azurerm_subnet" "openai-snet" {
   name                 = "openai-snet"
   resource_group_name  = azurerm_resource_group.openai-rg.name
   virtual_network_name = azurerm_virtual_network.openai-vnet.name
-  service_endpoints    = ["Microsoft.CognitiveServices"]
-  address_prefixes     = ["10.0.1.0/24"]
+  service_endpoint {
+    service = "Microsoft.CognitiveServices"
+  }
+  address_prefixes = ["10.0.1.0/24"]
 }
 
 resource "azurerm_network_security_group" "openai-nsg" {
